@@ -8,20 +8,29 @@ class App extends Component {
   };
 
   winnerLine = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
     [1, 4, 7],
     [2, 5, 8],
-    [3, 6, 9],
-    [1, 5, 9],
-    [3, 5, 7],
+    [0, 4, 8],
+    [6, 4, 2],
   ];
 
   isWinner = () => {
     let s = this.state.count % 2 === 0 ? 'X' : 'O';
+    for (let i = 0; i < this.winnerLine.length; i++) {
+      let line = this.winnerLine[i];
 
-    console.log(s);
+      if (
+        this.state.squares[line[0]] === s &&
+        this.state.squares[line[1]] === s &&
+        this.state.squares[line[2]] === s
+      ) {
+        alert(s + 'win');
+      }
+    }
   };
 
   handleClick = e => {
