@@ -1,0 +1,17 @@
+.cell {
+  width: 100px;
+  height: 100px;
+  background: darkgreen;
+  border: 1px solid #fff;
+  cursor: pointer;
+  outline: 0;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.cell:hover {
+  background: chartreuse;
+  transition: 0.3s;
+}
